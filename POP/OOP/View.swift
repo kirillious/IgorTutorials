@@ -35,7 +35,7 @@ class View {
     }()
     
     private lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [plusButton, minusButton, multiplyButton, divideButton])
+        let stack = UIStackView(arrangedSubviews: [plusButton, minusButton, multiplyButton, divideButton, powerButton])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.distribution = .fillEqually
@@ -72,6 +72,13 @@ class View {
         return button
     }()
     
+    private lazy var powerButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("^", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     lazy var outputTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -91,6 +98,7 @@ class View {
             minusButton.addTarget(controller, action: #selector(ViewController.minusTapped(sender:)), for: .touchUpInside)
             multiplyButton.addTarget(controller, action: #selector(ViewController.multiplyTapped(sender:)), for: .touchUpInside)
             divideButton.addTarget(controller, action: #selector(ViewController.divideTapped(sender:)), for: .touchUpInside)
+            powerButton.addTarget(controller, action: #selector(ViewController.powerTapped(sender:)), for: .touchUpInside)
             setConst()
         }
         return view ?? UIView()

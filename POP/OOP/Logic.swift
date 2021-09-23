@@ -9,7 +9,7 @@ import Foundation
 
 class Operation {
     
-    let x: Double
+    var x: Double
     let y: Double
     
     init(x: Double, y: Double) {
@@ -39,6 +39,12 @@ class Multiply: Operation {
 class Divide: Operation {
     func divide() -> Double {
         return x / y
+    }
+}
+
+class ToPower: Multiply {
+    override func multiply() -> Double {
+        return pow(x, y)
     }
 }
     

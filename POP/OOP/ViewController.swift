@@ -46,5 +46,10 @@ class ViewController: UIViewController {
         let divide = Divide(x: stringToDouble(text: view1.firstTextField.text), y: stringToDouble(text: view1.secondTextField.text))
         view1.outputTextField.text = String(divide.divide())
     }
+    
+    @objc func powerTapped(sender: UIButton) {
+        let power = ToPower(x: stringToDouble(text: view1.firstTextField.text), y: stringToDouble(text: view1.secondTextField.text))
+        view1.outputTextField.text = String(power.multiply())
+    }
 }
 
