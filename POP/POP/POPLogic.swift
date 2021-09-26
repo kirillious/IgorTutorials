@@ -8,40 +8,25 @@
 import Foundation
 
 protocol Operators {
-    init(x: Double, y: Double)
-    func operation() -> Double
+    func operation(x: Double, y: Double, operatorSign: String) -> Double
 }
 
-struct POPSum: Operators {
-    let x: Double
-    let y: Double
-    func operation() -> Double {
-        return x + y
-    }
+
+struct POPLogic: Operators {
     
-}
-
-struct POPMinus: Operators {
-    let x: Double
-    let y: Double
-    func operation() -> Double {
-        return x - y
-    }
-}
-
-struct POPMultiply: Operators {
-    let x: Double
-    let y: Double
-    func operation() -> Double {
-        return x * y
-    }
-}
-
-struct POPDivide: Operators {
-    let x: Double
-    let y: Double
-    func operation() -> Double {
-        return x / y
+    static let shared = POPLogic()
+    
+    func operation(x: Double, y: Double, operatorSign: String) -> Double {
+        switch operatorSign {
+        case "+":
+            return x + y
+        case "-":
+            return x - y
+        case "*":
+            return x * y
+        default:
+            return x / y
+        }
     }
 }
 

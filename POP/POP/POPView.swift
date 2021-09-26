@@ -9,8 +9,13 @@ import Foundation
 
 import UIKit
 
+protocol POPViewDelegate {
+    func getResultOfOperation(x: String, y: String, operatorSign: String) -> String
+}
+
 class POPView {
     let view: UIView?
+    var delegate = ViewModel()
     
     init(view: UIView?) {
         self.view = view
@@ -89,10 +94,10 @@ class POPView {
             view.addSubview(secondTextField)
             view.addSubview(stackView)
             view.addSubview(outputTextField)
-            plusButton.addTarget(controller, action: #selector(POPViewController.plusTapped(sender:)), for: .touchUpInside)
-            minusButton.addTarget(controller, action: #selector(POPViewController.minusTapped(sender:)), for: .touchUpInside)
-            multiplyButton.addTarget(controller, action: #selector(POPViewController.multiplyTapped(sender:)), for: .touchUpInside)
-            divideButton.addTarget(controller, action: #selector(POPViewController.divideTapped(sender:)), for: .touchUpInside)
+            plusButton.addTarget(self, action: #selector(self.plusTapped(sender:)), for: .touchUpInside)
+            minusButton.addTarget(self, action: #selector(self.minusTapped(sender:)), for: .touchUpInside)
+            multiplyButton.addTarget(self, action: #selector(self.multiplyTapped(sender:)), for: .touchUpInside)
+            divideButton.addTarget(self, action: #selector(self.divideTapped(sender:)), for: .touchUpInside)
             setConst()
         }
         return view ?? UIView()
@@ -108,6 +113,22 @@ class POPView {
             
             NSLayoutConstraint.activate([outputTextField.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30), outputTextField.leftAnchor.constraint(equalTo: firstTextField.leftAnchor), outputTextField.rightAnchor.constraint(equalTo: firstTextField.rightAnchor)])
         }
+    }
+    
+    @objc func plusTapped(sender: UIButton) {
+        outputTextField.text = delegate.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
+    }
+    
+    @objc func minusTapped(sender: UIButton) {
+        outputTextField.text = delegate.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
+    }
+    
+    @objc func multiplyTapped(sender: UIButton) {
+        outputTextField.text = delegate.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
+    }
+    
+    @objc func divideTapped(sender: UIButton) {
+        outputTextField.text = delegate.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
     }
     
 }

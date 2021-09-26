@@ -17,6 +17,11 @@
 		ED31DDEA26FCB9E800693F57 /* POPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31DDE926FCB9E700693F57 /* POPViewController.swift */; };
 		ED31DDEE26FCBB0400693F57 /* POPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31DDED26FCBB0400693F57 /* POPView.swift */; };
 		ED31DDF226FCBC9600693F57 /* POPLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31DDF126FCBC9600693F57 /* POPLogic.swift */; };
+		ED5C523627009A1200E27D7A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C523527009A1200E27D7A /* DataModel.swift */; };
+		EDA7514426FDC2FD008793C4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7514326FDC2FD008793C4 /* HistoryViewController.swift */; };
+		EDA7514826FDC7E0008793C4 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7514726FDC7E0008793C4 /* HistoryTableViewCell.swift */; };
+		EDA7514B26FDF9E7008793C4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7514A26FDF9E7008793C4 /* ViewModel.swift */; };
+		EDA7514E26FDF9F9008793C4 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA7514D26FDF9F9008793C4 /* DB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		ED31DDE926FCB9E700693F57 /* POPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPViewController.swift; sourceTree = "<group>"; };
 		ED31DDED26FCBB0400693F57 /* POPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPView.swift; sourceTree = "<group>"; };
 		ED31DDF126FCBC9600693F57 /* POPLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPLogic.swift; sourceTree = "<group>"; };
+		ED5C523527009A1200E27D7A /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		EDA7514326FDC2FD008793C4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		EDA7514726FDC7E0008793C4 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		EDA7514A26FDF9E7008793C4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		EDA7514D26FDF9F9008793C4 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,11 +98,24 @@
 		ED31DDE826FCB95A00693F57 /* POP */ = {
 			isa = PBXGroup;
 			children = (
+				EDA7514226FDC2D1008793C4 /* History */,
 				ED31DDE926FCB9E700693F57 /* POPViewController.swift */,
 				ED31DDED26FCBB0400693F57 /* POPView.swift */,
 				ED31DDF126FCBC9600693F57 /* POPLogic.swift */,
+				EDA7514A26FDF9E7008793C4 /* ViewModel.swift */,
+				EDA7514D26FDF9F9008793C4 /* DB.swift */,
+				ED5C523527009A1200E27D7A /* DataModel.swift */,
 			);
 			path = POP;
+			sourceTree = "<group>";
+		};
+		EDA7514226FDC2D1008793C4 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				EDA7514326FDC2FD008793C4 /* HistoryViewController.swift */,
+				EDA7514726FDC7E0008793C4 /* HistoryTableViewCell.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,9 +190,14 @@
 				ED31DDEA26FCB9E800693F57 /* POPViewController.swift in Sources */,
 				ED31DDDD26FC93C700693F57 /* View.swift in Sources */,
 				ED31DDE426FCAA8000693F57 /* Logic.swift in Sources */,
+				EDA7514B26FDF9E7008793C4 /* ViewModel.swift in Sources */,
 				ED31DDCA26FC92F900693F57 /* ViewController.swift in Sources */,
+				EDA7514E26FDF9F9008793C4 /* DB.swift in Sources */,
+				ED5C523627009A1200E27D7A /* DataModel.swift in Sources */,
+				EDA7514826FDC7E0008793C4 /* HistoryTableViewCell.swift in Sources */,
 				ED31DDC626FC92F900693F57 /* AppDelegate.swift in Sources */,
 				ED31DDC826FC92F900693F57 /* SceneDelegate.swift in Sources */,
+				EDA7514426FDC2FD008793C4 /* HistoryViewController.swift in Sources */,
 				ED31DDF226FCBC9600693F57 /* POPLogic.swift in Sources */,
 				ED31DDEE26FCBB0400693F57 /* POPView.swift in Sources */,
 			);
