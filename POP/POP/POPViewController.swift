@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol POPViewControllerDelegate {
-    func passData(x: String, y: String, operator: String)
-}
+
 
 class POPViewController: UIViewController {
     
+    let viewModel = ViewModel()
     var view1 = POPView(view: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view1 = POPView(view: self.view)
+        view1.delegate = viewModel
         view = view1.createdView(controller: self)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "History", style: .plain, target: self, action: #selector(historyTapped))
     }

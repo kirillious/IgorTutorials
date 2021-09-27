@@ -15,7 +15,7 @@ protocol POPViewDelegate {
 
 class POPView {
     let view: UIView?
-    var delegate = ViewModel()
+    var delegate: POPViewDelegate?
     
     init(view: UIView?) {
         self.view = view
@@ -116,19 +116,19 @@ class POPView {
     }
     
     @objc func plusTapped(sender: UIButton) {
-        outputTextField.text = delegate.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
+        outputTextField.text = delegate?.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
     }
     
     @objc func minusTapped(sender: UIButton) {
-        outputTextField.text = delegate.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
+        outputTextField.text = delegate?.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
     }
     
     @objc func multiplyTapped(sender: UIButton) {
-        outputTextField.text = delegate.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
+        outputTextField.text = delegate?.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
     }
     
     @objc func divideTapped(sender: UIButton) {
-        outputTextField.text = delegate.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
+        outputTextField.text = delegate?.getResultOfOperation(x: firstTextField.text ?? "0", y: secondTextField.text ?? "0", operatorSign: (sender.titleLabel?.text)!)
     }
     
 }
